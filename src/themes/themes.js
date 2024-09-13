@@ -4,17 +4,17 @@ export const themes = [
                                 fontColor: '#f1f1f1', 
                                 secondaryFontColor: '#23a9d5' 
     },
-    { index: 2, name: 'Light-mode', background: '#edebe2', 
+    { index: 2, name: 'Rongansiipi', background: '#edebe2', 
                                 secondary: '#d3cfc1', 
                                 fontColor: '#010101', 
                                 secondaryFontColor: '#99947f' 
     },
-    { index: 3, name: 'Eetteri', background: '#101820', 
+    { index: 3, name: 'Retro', background: '#101820', 
                                 secondary: '#292136', 
                                 fontColor: '#cf6bdd', 
                                 secondaryFontColor: '#eedaea' 
     },
-    { index: 4, name: 'Kahvi', background: '#cdb18c', 
+    { index: 4, name: 'Päärakennus', background: '#cdb18c', 
                                 secondary: '#bba180', 
                                 fontColor: '#545454', 
                                 secondaryFontColor: '#d3cfc1' 
@@ -33,5 +33,10 @@ export const themes = [
                                     secondary: '#72908d', 
                                     fontColor: '#495755', 
                                     secondaryFontColor: '#f1f1f1' 
+    },
+    { index: 8, name: 'Clasubileet', background: '#000000', 
+                                    secondary: '#cc99ff', 
+                                    fontColor: '#ff3399',
+                                    secondaryFontColor: '#0099ff'
     },
 ]

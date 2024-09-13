@@ -48,6 +48,20 @@ export const quotes = [
     { quote: 'ja tulemme törmäämään tähän n-sanaan useasti seuraavien tuntiemme aikana...', author: 'Ilkka Männikkö'},
     { quote: 'tää on niinkun laiton tää järjestelmä mikä meillä nyt on', author: 'Mari rauhala puhuuu OPKH:sta'},
     { quote: 'sää kyllä selkeesti meet kädelle sinne mut joo', author: 'Hristo Popov'},
-    { quote: '', author: ''},
-    { quote: '', author: ''}
+    { quote: 'tiedättekö mitä on skeida, mää luin fy3-kokeen vastauksia.', author: 'Pasi Ahtola'},
+    { quote: 'teistä tulee jotain suurta, muuallakin kuin vessassa.', author: 'Pasi Ahtola'},
+    { quote: 'paholaiselta eiku opetushallitukselta peräisin', author: 'Pasi Ahtola'},
+    { quote: 'johtoporsas... eiku johtoporras', author: 'Pasi Ahtola'},
+    { quote: 'teitä vaanii vektorimörkö sängyn alla.', author: 'Pasi Ahtola'},
+    { quote: 'kannattaa kokeilla mennä pöydän alle, jos se vähän auttais.', author: 'Pasi Ahtola'},
+    { quote: 'mä oon hyvä parittamaan ihmisiä', author: 'Minna Saarinen'},
+    { quote: 'nyt me masennutaan yhdessä', author: 'Emilia Rautiainen'},
+    { quote: 'polttakaa laskimenne.', author: 'Hannu Sinisalo'},
+    { quote: 'madelkaa polvillanna armoa ja pyytäkää sitä minulta, niin saatatte ehkä saada sitä.', author: 'Hannu Sinisalo'},
+    { quote: 'kissanpennuista puhutaan ihan liian vähän lukion oppitunneilla', author: 'Hannu Sinisalo'},
+    { quote: 'näkispä enemmän hauskoja juttuja esim. kissanpentuja.', author: 'Hannu Sinisalo'},
+    { quote: 'jos yhdenkään vektorin laitatte nimittäjään, mä lupaan repiä teidän vihkot rikki.', author: 'Hannu Sinisalo'},
+    { quote: 'what happens in välilehti stays in välilehti.', author: 'Hannu Sinisalo'},
+    { quote: 'oon tosi paljon nuuskinu erilaisia kiinteistöjä', author: 'Elina Luoma-aho'},
+    { quote: 'olen suuri hautausmaaharrastaja', author: 'Elina Luoma-aho'}
 ]
