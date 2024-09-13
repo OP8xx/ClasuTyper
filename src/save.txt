@@ -1,0 +1,12 @@
+  const generateRandomImage = () => {
+    const randomImageNumber = Math.floor(Math.random() * 4) + 1;
+    if (randomImageNumber === 1) {
+      setGameOverImg(gymmoila)
+    } else if (randomImageNumber === 2) {
+      setGameOverImg(luiska)
+    } else if (randomImageNumber === 3) {
+      setGameOverImg(hanninen)
+    } else if (randomImageNumber === 4) {
+      setGameOverImg(pasi)
+    }
+  }

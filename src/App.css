@@ -1,0 +1,353 @@
+/* Main and overall styling */
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* Header styling */
+.header, .header-hide {
+  width: 90%;
+  height: 8rem;
+  margin: 0 auto;
+  margin-top: 5vh !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s ease;
+}
+.header-hide {
+  opacity: 0;
+  transition: 0.5s ease;
+}
+.header-logo {
+  display: flex;
+  gap: 1rem;
+  margin-left: 3rem;
+}
+/* Info-container styling */
+.info-container, .info-container-hide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  transition: 0.5s ease;
+  z-index: 10;
+  border-left: 1px solid;
+  z-index: 10000;
+  overflow-x: hidden;
+}
+.info-container-hide {
+  transform: translate(200%, 0%);
+  transition: 0.5s ease;
+}
+.return-arrow-info {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+}
+.info-container h1, .info-container-hide h1 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.info-container p, .info-container-hide p {
+  width: 70%;
+  font-size: 1rem;
+  text-align: center;
+}
+.info-container p hr, .info-container-hide p hr {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* theme-selector box styling */
+.header-buttons {
+  display: flex;
+  align-self: center;
+  gap: 1rem;
+  transition: 0.5s ease;
+  margin-right: 3rem;
+  cursor: pointer;
+}
+.header-buttons:hover {
+  transition: 0.5s ease;
+}
+.theme-selector, .theme-selector-closed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: 0.5s ease;
+  z-index: 10;
+  border-left: 1px solid;
+  z-index: 10000;
+  overflow-x: hidden;
+}
+.return-arrow-theme {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+.theme-selector-closed {
+  transform: translate(200%, 0%);
+  transition: 0.5s ease;
+}
+.theme-selector h1, .theme-selector-closed h1 {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.theme-selector-container {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.theme-box {
+  width: 100%;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.theme-overview {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  margin-left: 1rem;
+}
+
+/* Main content styling */
+.main-content {
+  width: 90%;
+  height: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+.word-container {
+  width: 90%;
+  height: 60%;
+  font-size: 2rem;
+  overflow-y: scroll;
+}
+.typer-info, .typer-info-hide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+.typer-info button, .typer-info-hide button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  border: none;
+}
+.typer-info-hide {
+  opacity: 0 !important;
+  transition: 0.5s ease;
+}
+.word-container input {
+  opacity: 0;
+  z-index: 1000;
+  position: absolute;
+}
+span {
+  border-right: 3px solid transparent;
+}
+span.active {
+  border-bottom: 3px solid;
+  transition: 0.25s ease;
+}
+span.wrong {
+  color: red;
+}
+.functions-container, .functions-container-hide {
+  width: 90%;
+  height: 5rem;
+  border-radius: 1rem;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  transition: 0.5s ease;
+}
+.functions-container-hide {
+  opacity: 0 !important;
+  transition: 0.5s ease;
+}
+.words-time {
+  display: flex;
+}
+.save-settings {
+  display: flex;
+  margin-right: 2rem;
+}
+.functions-container p, .functions-container-hide p {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+.functions-container input, .functions-container-hide input {
+  width: 3rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+}
+.functions-container button {
+  width: 5rem;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+}
+.dropdown:hover .dropdown-content {
+  display: flex;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+.game-over-container, .game-over-hide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.75s ease;
+  z-index: 10;
+  overflow-y: hidden;
+}
+.game-over-hide {
+  transform: translate(0%, 200%);
+  transition: 0.75s ease;
+  overflow-y: hidden;
+}
+.game-over-content {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+
+}
+.game-over-header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 50%;
+  height: 80%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.game-over-stats {
+  width: 50%;
+  height: 80%;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.game-over-button-container {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.game-over-button-container button {
+  width: 15rem;
+  height: 3rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  border: none;
+  font-size: 1rem;
+}
+
+footer {
+  width: 100%;
+  height: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  opacity: 0.75;
+}
+
+.credits-open, .credits-hide {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: 0.5s ease;
+  z-index: 10;
+  border-left: 1px solid;
+  z-index: 10000;
+  overflow-x: hidden;
+}
+.credits-hide {
+  transform: translate(200%, 0%);
+  transition: 0.5s ease;
+  overflow-y: hidden;
+}
+.return-arrow-credits {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+
+}
+.credits-open, .credits-hide {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+.credits-open h1, .credits-hide h1 {
+  width: 80%;
+  font-size: 2rem;
+  text-align: center;
+}
+.credits-open hr , .credits-hide hr {
+  width: 80%;
+}
+.credits-open p, .credits-hide p {
+  width: 80%;
+  font-size: 1rem;
+  text-align: center;
+}
