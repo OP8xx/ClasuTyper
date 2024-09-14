@@ -12,6 +12,8 @@ import { quotes } from './quotes/quotes';
 import clasuLogo from './assets/clasulogo.svg'
 import luiska from './assets/luiska.svg'
 import hanninen from './assets/hanninen.svg'
+import pasi from './assets/pasi.svg'
+import gymmoila from './assets/gymmoila.png'
 
 function App() {
 
@@ -20,6 +22,9 @@ function App() {
   const [themeSecondary, setThemeSecondary] = useState(themes[0].secondary)
   const [themeFontColor, setThemeFontColor] = useState(themes[0].fontColor)
   const [themeSecondaryFontColor, setThemeSecondaryFontColor] = useState(themes[0].secondaryFontColor)
+
+  // easter egg
+  const [isFalling, setIsFalling] = useState(false)
 
   // sidebar states
   const [themeSelectorOpen, setThemeSelectorOpen] = useState(false)
@@ -175,8 +180,83 @@ function App() {
     inputRef.current.focus()
   }
 
+  const easterEggFunction = () => {
+    setIsFalling(true)
+    setTimeout(() => {
+      setIsFalling(false)
+    }, 5000)
+  }
+
   return (
     <main style={{ backgroundColor: themeBackground, color: themeFontColor  }}>
+
+      <div className={isFalling ? 'easter-egg' : 'easter-egg-hide'}>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-8' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-9' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-8' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-9' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-8' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-9' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-8' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-9' src={gymmoila} alt="" width={100}/></div>
+        <div><img className='hanninen-1' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-2' src={luiska} alt="" width={100}/></div>
+        <div><img className='hanninen-3' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-4' src={pasi} alt="" width={100}/></div>
+        <div><img className='hanninen-5' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-6' src={hanninen} alt="" width={100}/></div>
+        <div><img className='hanninen-7' src={gymmoila} alt="" width={100}/></div>
+
+      </div>
 
       {/* Theme selector sidebar */}
       <div className={themeSelectorOpen ? 'theme-selector' : 'theme-selector-closed'} style={{ backgroundColor: themeSecondary}}>
@@ -304,7 +384,7 @@ function App() {
 
       <header className='header'>
         <div className='header-logo'>
-          <img src={clasuLogo} alt="cow" width={50} style={{ filter: 'invert(1)'}}/>
+          <img onClick={easterEggFunction} src={clasuLogo} alt="cow" width={50} style={{ filter: 'invert(1)'}}/>
           <h1>
             <Typewriter
               options={{
