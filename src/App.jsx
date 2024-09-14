@@ -384,7 +384,7 @@ function App() {
 
       <header className='header'>
         <div className='header-logo'>
-          <img onClick={easterEggFunction} src={clasuLogo} alt="cow" width={50} style={{ filter: 'invert(1)'}}/>
+          <img onClick={easterEggFunction} src={clasuLogo} alt="cow" width={50}/>
           <h1>
             <Typewriter
               options={{
