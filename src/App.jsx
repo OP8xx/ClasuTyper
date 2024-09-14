@@ -20,12 +20,13 @@ function App() {
   const [themeSecondary, setThemeSecondary] = useState(themes[0].secondary)
   const [themeFontColor, setThemeFontColor] = useState(themes[0].fontColor)
   const [themeSecondaryFontColor, setThemeSecondaryFontColor] = useState(themes[0].secondaryFontColor)
-  const [themeSelectorOpen, setThemeSelectorOpen] = useState(false)
 
-  // Info container states
+  // sidebar states
+  const [themeSelectorOpen, setThemeSelectorOpen] = useState(false)
   const [infoContainerOpen, setInfoContainerOpen] = useState(false)
   const [creditsOpen, setCreditsOpen] = useState(false)
   const [contactOpen, setContactOpen] = useState(false)
+  const [privacyOpen, setPrivacyOpen] = useState(false)
 
   // Game states
   const [maxTime, setMaxTime] = useState(60)
@@ -278,8 +279,32 @@ function App() {
         <p>Inspiraationa toiminut: <a style={{color: themeFontColor}} target='_blank' href="https://monkeytype.com">https://monkeytype.com</a></p>
       </div>
 
+      {/* Privacy sidebar */}
+      <div className={privacyOpen ? 'privacy-open' : 'privacy-hide'} style={{ backgroundColor: themeSecondary}}>
+        <svg
+          onClick={() => setPrivacyOpen(!privacyOpen)}
+          className='return-arrow'
+          fill={themeFontColor}
+          style={{ cursor: 'pointer'}}
+          width={20} height={20}
+          viewBox="0 0 15 15" 
+          xmlns="http://www.w3.org/2000/svg" 
+          id="arrow">
+          <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+        </svg>
+
+        <h1>Yksityisyys</h1>
+
+        <p>
+          Tämä sivusto käyttää analytiikkatyökaluja kerätäkseen relevanttia informaatiota 
+          vierailijoiden määrästä. Sivusto ei kerää vierailijoista arkaluontoista dataa. 
+          Analytiikkatyökalu kerää seuraavat vierailijan tiedot: selain, käyttöjärjestelmä, maa sekä referoija.
+        </p>
+      </div>
+
       <header className='header'>
         <div className='header-logo'>
+          <img src={clasuLogo} alt="cow" width={50} style={{ filter: 'invert(1)'}}/>
           <h1>
             <Typewriter
               options={{
@@ -290,7 +315,6 @@ function App() {
               }}
             />
           </h1>
-          <img src={clasuLogo} alt="cow" width={50} style={{ filter: 'invert(1)'}}/>
         </div>
         <div className='header-buttons'>
           <svg
@@ -414,19 +438,22 @@ function App() {
       </section>
 
       <footer>
-        <a href="https://github.com/OP8xx/ClasuTyper" target='_blank'>
-          <svg
-            className='github-icon' 
-            fill={themeFontColor} 
-            width={25} height={25} 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg" 
-            data-name="Layer 1"
-            href='https://github.com/OP8xx/ClasuTyper' target='_blank'
-          >
-            <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"/>
-          </svg>
-        </a>
+        <div className='footer-icons'>
+          <a href="https://github.com/OP8xx/ClasuTyper" target='_blank'>
+            <svg
+              className='github-icon' 
+              fill={themeFontColor} 
+              width={25} height={25} 
+              viewBox="0 0 24 24" 
+              xmlns="http://www.w3.org/2000/svg" 
+              data-name="Layer 1"
+              href='https://github.com/OP8xx/ClasuTyper' target='_blank'
+            >
+              <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"/>
+            </svg>
+          </a>
+          <svg onClick={() => setPrivacyOpen(!privacyOpen)} className='privacy-icon' fill={themeFontColor} width={25} height={25} viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"><path d="M17,9V7c0-2.8-2.2-5-5-5S7,4.2,7,7v2c-1.7,0-3,1.3-3,3v7c0,1.7,1.3,3,3,3h10c1.7,0,3-1.3,3-3v-7C20,10.3,18.7,9,17,9z M9,7c0-1.7,1.3-3,3-3s3,1.3,3,3v2H9V7z"/></svg>
+        </div>
         <div className='version'>
           <svg 
             width={20} 
