@@ -3,7 +3,7 @@ import './App.css'
 
 // Importing hooks and libraries
 import { useState, useEffect, useRef } from 'react'
-import { generate } from "random-words";
+import Typewriter from 'typewriter-effect';
 import { themes } from './themes/themes';
 import { quotes } from './quotes/quotes';
 
@@ -142,6 +142,17 @@ function App() {
     }
   }
 
+  const resetgame = () => {
+    setCharIndex(0)
+    setMistakes(0)
+    setWpm(0)
+    setIsRunning(false)
+    setCorrectWrong([])
+    setMaxTime(60)
+    setTimeLeft(maxTime)
+    inputRef.current.focus()
+  }
+
   const generateWords = () => {
     randomIndexGenerate()
     const quote = quotes[randomIndex]
@@ -165,6 +176,7 @@ function App() {
   return (
     <main style={{ backgroundColor: themeBackground, color: themeFontColor  }}>
 
+      {/* Theme selector sidebar */}
       <div className={themeSelectorOpen ? 'theme-selector' : 'theme-selector-closed'} style={{ backgroundColor: themeSecondary}}>
         <svg
           onClick={() => setThemeSelectorOpen(!themeSelectorOpen)}
@@ -200,6 +212,7 @@ function App() {
         </div>
       </div>
 
+      {/* Info sidebar */}
       <div className={infoContainerOpen ? 'info-container' : 'info-container-hide'} style={{ backgroundColor: themeSecondary}}>
           <svg
             onClick={() => setInfoContainerOpen(!infoContainerOpen)}
@@ -215,12 +228,15 @@ function App() {
           <h1>Tietoa ClasuTyperista</h1>
 
           <p>
-            ClasuTyperissa testaat kirjoitusnopeuttasi Clasun opettajien sanomien lausahdusten avulla! Jokainen lausahdus on otettu koulun clarus-lehdestä.
+            ClasuTyperissa testaat kirjoitusnopeuttasi Clasun opettajien sanomien lausahdusten avulla!
             <hr style={{border: `1px solid ${themeFontColor}`}}/>
-            Kyseessä on henkilökohtainen avoimen lähdekoodin koodausprojekti. Projetki on tehty täysin harrastelumielessä, eikä sen tarkoituksena ole, eikä tule olemaan loukata ketään clasun kunnioitettavista opettajista  &lt;3
+            Kyseessä on harrastelumielessä tehty avoimen lähdekoodin koodausprojekti. Sen tarkoituksena ei ole loukata ketään clasun kunnioitettavista opettajista  &lt;3
+            <hr style={{border: `1px solid ${themeFontColor}`}}/>
+            Huom. Peli on vasta ensimmäisessä versiossaan, jonka vuoksi bugit ovat yleisiä. Kiitos ymmärryksestä!
           </p>
       </div>
 
+      {/* Contact sidebar */}
       <div className={contactOpen ? 'contact-container' : 'contact-container-hide'} style={{ backgroundColor: themeSecondary}}>
         <svg
           onClick={() => setContactOpen(!contactOpen)}
@@ -238,6 +254,7 @@ function App() {
         <p>laita sähköpostia: <br></br> <a style={{color: themeFontColor}} href="mailto:pasinritarikunta@gmail.com">pasinritarikunta@gmail.com</a></p>
       </div>
 
+      {/* Credits sidebar */}
       <div className={creditsOpen ? 'credits-open' : 'credits-hide'} style={{ backgroundColor: themeSecondary}}>
         <svg
           onClick={() => setCreditsOpen(!creditsOpen)}
@@ -262,7 +279,16 @@ function App() {
 
       <header className='header'>
         <div className='header-logo'>
-          <h1> ClasuTyper.fi</h1>
+          <h1>
+            <Typewriter
+              options={{
+                strings: ['ClasuTyper.fi'],
+                autoStart: true,
+                loop: true,
+                pauseFor: 5000,
+              }}
+            />
+          </h1>
           <img src={clasuLogo} alt="cow" width={50} style={{ filter: 'invert(1)'}}/>
         </div>
         <div className='header-buttons'>
@@ -346,10 +372,15 @@ function App() {
           <div className='word-container'>
             <div className={isRunning === false ? 'typer-info-hide' : 'typer-info'}>
               <p>{timeLeft}</p>
-              <button 
-                onClick={generateWords}
-                style={{ backgroundColor: themeSecondary, color: themeFontColor }}
-              >Stop</button>
+              <svg
+                onClick={resetgame}
+                className='reset-icon' 
+                width={20}
+                height={20}
+                viewBox="0 0 16 16" 
+                xmlns="http://www.w3.org/2000/svg" 
+                fill={themeFontColor}>
+                  <path d="M7.248 1.307A.75.75 0 118.252.193l2.5 2.25a.75.75 0 010 1.114l-2.5 2.25a.75.75 0 01-1.004-1.114l1.29-1.161a4.5 4.5 0 103.655 2.832.75.75 0 111.398-.546A6 6 0 118.018 2l-.77-.693z"/></svg>
             </div>
             <input type="text" ref={inputRef} onKeyDown={handleKeyDown}/>
               {
@@ -367,14 +398,15 @@ function App() {
 
           <div className={isRunning === false ? 'functions-container' : 'functions-container-hide'} style={{ backgroundColor: themeSecondary}}>
             <div className='settings' onClick={generateWords}>
-              <svg
-                className='settings-icon' 
-                width={20}
-                height={20}
-                viewBox="0 0 16 16" 
-                xmlns="http://www.w3.org/2000/svg" 
-                fill={themeFontColor}>
-                  <path d="M7.248 1.307A.75.75 0 118.252.193l2.5 2.25a.75.75 0 010 1.114l-2.5 2.25a.75.75 0 01-1.004-1.114l1.29-1.161a4.5 4.5 0 103.655 2.832.75.75 0 111.398-.546A6 6 0 118.018 2l-.77-.693z"/></svg>
+            <svg
+              fill={themeFontColor}
+              width={25} 
+              height={25}
+              viewBox="0 0 32 32" 
+              version="1.1" 
+              xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.5 29.5c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM21.938 15.938c0-0.552-0.448-1-1-1h-4v-4c0-0.552-0.447-1-1-1h-1c-0.553 0-1 0.448-1 1v4h-4c-0.553 0-1 0.448-1 1v1c0 0.553 0.447 1 1 1h4v4c0 0.553 0.447 1 1 1h1c0.553 0 1-0.447 1-1v-4h4c0.552 0 1-0.447 1-1v-1z"></path>
+              </svg>
               <p>Uusi quote</p>
             </div>
           </div>
@@ -382,18 +414,19 @@ function App() {
 
       <footer>
         <a href="https://github.com/OP8xx/ClasuTyper" target='_blank'>
-            <svg
-              className='github-icon' 
-              fill={themeFontColor} 
-              width={25} height={25} 
-              viewBox="0 0 24 24" 
-              xmlns="http://www.w3.org/2000/svg" 
-              data-name="Layer 1"
-              href='https://github.com/OP8xx/ClasuTyper' target='_blank'
-            >
-              <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"/>
-            </svg>
-          </a>
+          <svg
+            className='github-icon' 
+            fill={themeFontColor} 
+            width={25} height={25} 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" 
+            data-name="Layer 1"
+            href='https://github.com/OP8xx/ClasuTyper' target='_blank'
+          >
+            <path d="M12,2.2467A10.00042,10.00042,0,0,0,8.83752,21.73419c.5.08752.6875-.21247.6875-.475,0-.23749-.01251-1.025-.01251-1.86249C7,19.85919,6.35,18.78423,6.15,18.22173A3.636,3.636,0,0,0,5.125,16.8092c-.35-.1875-.85-.65-.01251-.66248A2.00117,2.00117,0,0,1,6.65,17.17169a2.13742,2.13742,0,0,0,2.91248.825A2.10376,2.10376,0,0,1,10.2,16.65923c-2.225-.25-4.55-1.11254-4.55-4.9375a3.89187,3.89187,0,0,1,1.025-2.6875,3.59373,3.59373,0,0,1,.1-2.65s.83747-.26251,2.75,1.025a9.42747,9.42747,0,0,1,5,0c1.91248-1.3,2.75-1.025,2.75-1.025a3.59323,3.59323,0,0,1,.1,2.65,3.869,3.869,0,0,1,1.025,2.6875c0,3.83747-2.33752,4.6875-4.5625,4.9375a2.36814,2.36814,0,0,1,.675,1.85c0,1.33752-.01251,2.41248-.01251,2.75,0,.26251.1875.575.6875.475A10.0053,10.0053,0,0,0,12,2.2467Z"/>
+          </svg>
+        </a>
+        <p>Ver 1.0</p>
       </footer>
 
       <div className='mobile-message'>
