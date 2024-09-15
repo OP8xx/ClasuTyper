@@ -59,11 +59,7 @@ function App() {
   }
 
   useEffect(() => {
-    randomIndexGenerate()
-    inputRef.current.focus()
-    setWords(quotes[randomIndex].quote)
-    setAuthor(quotes[randomIndex].author)
-    setCorrectWrong(Array(charRefs.current.length).fill(''))
+    generateWords()
   }, [])
 
   useEffect(() => {
@@ -135,11 +131,9 @@ function App() {
         if (typedChar === currentChar.textContent) {
           setCharIndex(charIndex + 1)
           correctWrong[charIndex] = 'correct'
-          clickNoise.play()
         } else {
           setCharIndex(charIndex + 1)
           setMistakes(mistakes + 1)
-          clickNoise.play()
           correctWrong[charIndex] = 'wrong'
         }
         
