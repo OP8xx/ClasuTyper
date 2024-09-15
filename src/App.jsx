@@ -7,6 +7,7 @@ import Typewriter from 'typewriter-effect';
 import { Analytics } from "@vercel/analytics/react"
 import { themes } from './themes/themes';
 import { quotes } from './quotes/quotes';
+import { ContactUs } from './components/contactform/contactform';
 
 // Importing images 
 import clasuLogo from './assets/clasulogo.svg'
@@ -333,7 +334,7 @@ function App() {
         </svg>
 
         <h1>Parannusehdotuksia? Lisää quoteja?</h1>
-        <p>laita sähköpostia: <br></br> <a style={{color: themeFontColor}} href="mailto:pasinritarikunta@gmail.com">pasinritarikunta@gmail.com</a></p>
+        <ContactUs style={{backgroundColor: themeBackground}} inputStyle={{color: themeFontColor, backgroundColor: themeSecondary}}/>
       </div>
 
       {/* Credits sidebar */}
