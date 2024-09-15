@@ -51,6 +51,8 @@ function App() {
   const inputRef = useRef(null)
   const charRefs = useRef([])
 
+  const clickNoise = new Audio('/pop2.mp3')
+
   const randomIndexGenerate = () => {
     setRandomIndex(Math.floor(Math.random() * quotes.length))
     console.log(randomIndex)
@@ -114,6 +116,7 @@ function App() {
         setCharIndex(charIndex - 1);
         correctWrong[charIndex - 1] = '';
         inputRef.current.value = '';
+        clickNoise.play()
       }
     } else {
       const characters = charRefs.current;
@@ -132,9 +135,11 @@ function App() {
         if (typedChar === currentChar.textContent) {
           setCharIndex(charIndex + 1)
           correctWrong[charIndex] = 'correct'
+          clickNoise.play()
         } else {
           setCharIndex(charIndex + 1)
           setMistakes(mistakes + 1)
+          clickNoise.play()
           correctWrong[charIndex] = 'wrong'
         }
         
@@ -179,6 +184,7 @@ function App() {
     setGameOver(false)
     setMaxTime(60)
     inputRef.current.focus()
+    clickNoise.play()
   }
 
   const easterEggFunction = () => {
