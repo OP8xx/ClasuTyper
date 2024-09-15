@@ -112,7 +112,6 @@ function App() {
         setCharIndex(charIndex - 1);
         correctWrong[charIndex - 1] = '';
         inputRef.current.value = '';
-        clickNoise.play()
       }
     } else {
       const characters = charRefs.current;
