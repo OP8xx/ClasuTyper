@@ -458,6 +458,7 @@ footer {
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: start;
+  overflow: hidden;
 }
 .easter-egg div {
   animation: falling 5s linear;
