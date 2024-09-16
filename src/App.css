@@ -450,6 +450,10 @@ footer {
   }
 }
 
+.enter-info {
+  font-size: 0.75rem;
+}
+
 .easter-egg {
   position: absolute;
   width: 100%;
