@@ -373,13 +373,14 @@ span.wrong {
 }
 .game-over-button-container {
   width: 100%;
-  height: 20%;
+  height: 30%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
 }
 .game-over-button-container button {
-  width: 15rem;
+  width: 30rem;
   height: 3rem;
   border-radius: 1rem;
   cursor: pointer;

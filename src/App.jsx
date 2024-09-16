@@ -50,6 +50,7 @@ function App() {
 
   const inputRef = useRef(null)
   const charRefs = useRef([])
+  const gameOverRef = useRef(null)
 
   const clickNoise = new Audio('/pop2.mp3')
 
@@ -61,6 +62,12 @@ function App() {
   useEffect(() => {
     generateWords()
   }, [])
+
+  useEffect(() => {
+    if (gameOver === true) {
+      gameOverRef.current.focus();
+    }
+  }, [gameOver]);
 
   useEffect(() => {
     if (words && (timeLeft <= 0 || charIndex >= words.length)) {
@@ -105,6 +112,12 @@ function App() {
     return () => clearInterval(interval);
   }, [isRunning, timeLeft]);
 
+
+  const handleQuickRestart = () => {
+    if (e.key === 'Enter') {
+      generateWords()
+    }
+  }
 
   const handleKeyDown = (e) => {
     if (e.key === 'Backspace') {
@@ -461,6 +474,9 @@ function App() {
           <div 
             className={gameOver ? 'game-over-container' : 'game-over-hide'}
             style={{ backgroundColor: themeSecondary}}
+            ref={gameOverRef}
+            tabIndex={0}
+            onKeyDown={e => e.key === 'Enter' ? generateWords() : null}
           >
             <div className='game-over-content'>
               <div className='game-over-header'>
@@ -479,7 +495,7 @@ function App() {
               <button 
                 onClick={generateWords}
                 style={{ backgroundColor: themeBackground, color: themeFontColor }}
-              >Kokeile uudelleen</button>
+              >Paina enter kokeillaksesi uudelleen</button>
             </div>
 
           </div>
