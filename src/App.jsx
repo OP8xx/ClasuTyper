@@ -66,7 +66,7 @@ function App() {
     if (words && (timeLeft <= 0 || charIndex >= words.length)) {
       setIsRunning(false);
       console.log('game over')
-      setGameOver(true);
+      gameOverFunction()
     }
   }, [timeLeft, charIndex, words]);
 
@@ -113,7 +113,7 @@ function App() {
         correctWrong[charIndex - 1] = '';
         inputRef.current.value = '';
       }
-    } else if (e.key === 'Enter') {
+    } else if (e.key === 'Enter' && isRunning == true) {
       resetgame()
     }
       
@@ -189,6 +189,11 @@ function App() {
     setTimeout(() => {
       setIsFalling(false)
     }, 5000)
+  }
+
+  const gameOverFunction = () => {
+    setGameOver(true)
+    setIsRunning(false)
   }
 
   return (
