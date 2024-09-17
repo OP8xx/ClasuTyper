@@ -87,4 +87,5 @@ export const quotes = [
     { quote: 'pistäkää ne paholaisen koneet pois', author: 'Ilkka Männikkö'},
     { quote: 'varhainen homo sapiens pystyi sanomaan jo esimerkiksi tik-tok video, mutta hän ei halunnut tehdä niin, koska ihmiskunta ei ollut vielä rappeutunut."', author: 'Mikko Turunen'},
     { quote: 'odota, odota mun pitää haukkua yks opiskelija', author: 'Heikki Liuska'},
+    { quote: 'Ella ei ole pelkästään hyvännäkönen, mutta myös fiksu', author: 'Hristo Popov'},
 ]
