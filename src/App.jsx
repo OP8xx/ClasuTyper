@@ -472,7 +472,7 @@ function App() {
 
       <section className='main-content'>
           <div 
-            className={gameOver ? 'game-over-container' : 'game-over-hide'}
+            className={gameOver === true ? 'game-over-container' : 'game-over-hide'}
             style={{ backgroundColor: themeSecondary}}
             ref={gameOverRef}
             tabIndex={0}
