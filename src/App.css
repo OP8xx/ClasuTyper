@@ -29,7 +29,7 @@ main {
   gap: 1rem;
   margin-left: 3rem;
 }
-.theme-selector-icon:hover, .info-icon:hover, .contact-icon:hover, .github-icon:hover, .credits-icon:hover, .privacy-icon:hover {
+.theme-selector-icon:hover, .info-icon:hover, .contact-icon:hover, .github-icon:hover, .credits-icon:hover, .privacy-icon:hover, .notification-icon:hover {
   animation: shake 0.5s;
 }
 
@@ -223,6 +223,37 @@ main {
 .privacy-open p, .privacy-hide p {
   width: 80%;
   font-size: 1rem;
+}
+.notification-open, .notification-hide {
+  position: fixed;
+  padding-top: 5rem;
+  top: 0;
+  right: 0;
+  width: 22rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: 0.5s ease;
+  z-index: 10;
+  border-left: 1px solid;
+  z-index: 10000;
+  overflow-x: hidden;
+}
+.notification-hide {
+  transform: translate(200%, 0%);
+  transition: 0.5s ease;
+}
+.notification {
+  padding: 1rem;
+  width: 80%;
+  height: 8rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 }
 /* theme-selector box styling */
 .header-buttons {

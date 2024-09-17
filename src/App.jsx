@@ -33,6 +33,7 @@ function App() {
   const [creditsOpen, setCreditsOpen] = useState(false)
   const [contactOpen, setContactOpen] = useState(false)
   const [privacyOpen, setPrivacyOpen] = useState(false)
+  const [notificationOpen, setNotificationOpen] = useState(false)
 
   // Game states
   const [maxTime, setMaxTime] = useState(60)
@@ -111,13 +112,6 @@ function App() {
     }
     return () => clearInterval(interval);
   }, [isRunning, timeLeft]);
-
-
-  const handleQuickRestart = () => {
-    if (e.key === 'Enter') {
-      generateWords()
-    }
-  }
 
   const handleKeyDown = (e) => {
     if (e.key === 'Backspace') {
@@ -404,6 +398,28 @@ function App() {
         </p>
       </div>
 
+      {/* Notification sidebar*/}
+      <div className={notificationOpen ? 'notification-open' : 'notification-hide'} style={{ backgroundColor: themeSecondary}}>
+        <svg
+          onClick={() => setNotificationOpen(!notificationOpen)}
+          className='return-arrow'
+          fill={themeFontColor}
+          style={{ cursor: 'pointer'}}
+          width={20} height={20}
+          viewBox="0 0 15 15" 
+          xmlns="http://www.w3.org/2000/svg" 
+          id="arrow">
+          <path d="M8.29289 2.29289C8.68342 1.90237 9.31658 1.90237 9.70711 2.29289L14.2071 6.79289C14.5976 7.18342 14.5976 7.81658 14.2071 8.20711L9.70711 12.7071C9.31658 13.0976 8.68342 13.0976 8.29289 12.7071C7.90237 12.3166 7.90237 11.6834 8.29289 11.2929L11 8.5H1.5C0.947715 8.5 0.5 8.05228 0.5 7.5C0.5 6.94772 0.947715 6.5 1.5 6.5H11L8.29289 3.70711C7.90237 3.31658 7.90237 2.68342 8.29289 2.29289Z"/>
+        </svg>
+
+        <h1>Ilmoitukset</h1>
+
+        <div className='notification' style={{ backgroundColor: themeBackground, border: `1px solid ${themeFontColor}`}}>
+          <p>Kiitoksia kaikista lähetetyistä quoteista ja lämpimästä vastaanotosta &lt;3</p>
+          <p>- Pelintekijä</p>
+        </div>
+      </div>
+
       <header className='header'>
         <div className='header-logo'>
           <img onClick={easterEggFunction} src={clasuLogo} alt="cow" width={50}/>
@@ -466,6 +482,15 @@ function App() {
             viewBox="0 0 24 24"
           >
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+          <hr style={{border: `1px solid ${themeFontColor}`}}/>
+          <svg fill={themeFontColor} xmlns="http://www.w3.org/2000/svg" onClick={() => setNotificationOpen(!notificationOpen)} className='notification-icon'
+	            width={20} height={20} viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+            <g>
+	          <path d="M46,33h-0.5c-1.9,0-3.5-1.6-3.5-3.5V18c0-9.1-7.6-16.4-16.8-16C16.6,2.4,10,9.8,10,18.5v11.1
+	          	c0,1.9-1.6,3.4-3.5,3.4H6c-2.2,0-4,1.9-4,4.1v1.5C2,39.3,2.7,40,3.5,40h45c0.8,0,1.5-0.7,1.5-1.5V37C50,34.8,48.2,33,46,33z"/>
+	          <path d="M30.9,44h-9.8c-0.6,0-1.1,0.6-1,1.2c0.5,2.8,3,4.8,5.9,4.8s5.4-2.1,5.9-4.8C32,44.6,31.5,44,30.9,44z"/>
+            </g>
           </svg>
         </div>
       </header>
