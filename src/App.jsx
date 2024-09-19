@@ -370,6 +370,8 @@ function App() {
         
         <p>Made by: <br></br>Clasun Abi 2025</p>
         <hr style={{border: `1px solid ${themeFontColor}`}}/>
+        <p>Pelin kuvitukset: <br></br>Eräs Clasun Alumni</p>
+        <hr style={{border: `1px solid ${themeFontColor}`}}/>
         <p>Erityismaininta Clarukselle, joihin on dokumentoitu opettajien lausahduksia</p>
         <hr style={{border: `1px solid ${themeFontColor}`}}/>
         <p>Inspiraationa toiminut: <a style={{color: themeFontColor}} target='_blank' href="https://monkeytype.com">https://monkeytype.com</a></p>
