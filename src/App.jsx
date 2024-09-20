@@ -170,6 +170,14 @@ function App() {
     inputRef.current.focus()
   }
 
+  const quickGenerateWords = (e) => {
+    if (isRunning === false) {
+      if (e.key === 'r') {
+        generateWords()
+      }
+    }
+  }
+
   const generateWords = () => {
     randomIndexGenerate()
     const quote = quotes[randomIndex]
@@ -497,7 +505,7 @@ function App() {
         </div>
       </header>
 
-      <section className='main-content'>
+      <section className='main-content' onKeyDown={quickGenerateWords} tabIndex={0}>
           <div 
             className={gameOver === true ? 'game-over-container' : 'game-over-hide'}
             style={{ backgroundColor: themeSecondary}}
@@ -565,7 +573,7 @@ function App() {
               xmlns="http://www.w3.org/2000/svg">
                 <path d="M15.5 29.5c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM21.938 15.938c0-0.552-0.448-1-1-1h-4v-4c0-0.552-0.447-1-1-1h-1c-0.553 0-1 0.448-1 1v4h-4c-0.553 0-1 0.448-1 1v1c0 0.553 0.447 1 1 1h4v4c0 0.553 0.447 1 1 1h1c0.553 0 1-0.447 1-1v-4h4c0.552 0 1-0.447 1-1v-1z"></path>
               </svg>
-              <p>Uusi quote</p>
+              <p>Uusi quote <span className='or-press'>(tai paina r)</span></p>
             </div>
           </div>
       </section>
