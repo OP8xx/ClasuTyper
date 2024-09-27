@@ -87,7 +87,7 @@ export const quotes = [
     { quote: 'pistäkää ne paholaisen koneet pois', author: 'Ilkka Männikkö'},
     { quote: 'varhainen homo sapiens pystyi sanomaan jo esimerkiksi tik-tok video, mutta hän ei halunnut tehdä niin, koska ihmiskunta ei ollut vielä rappeutunut."', author: 'Mikko Turunen'},
     { quote: 'odota, odota mun pitää haukkua yks opiskelija', author: 'Heikki Liuska'},
-    { quote: 'Ella ei ole pelkästään hyvännäkönen, mutta myös fiksu', author: 'Hristo Popov'},
+    { quote: 'ella ei ole pelkästään hyvännäkönen, mutta myös fiksu', author: 'Hristo Popov'},
     { quote: 'kun tarpeeks ryyppää, niin kokonaisvoima heittelee', Author: 'Pasi Ahtola'},
     { quote: 'vaikka mä oon täällä teidän kanssa läsnä, niin oikeesti mä oon siirtynyt tonne oluthuoneen puolelle jo.', Author: 'Pasi Ahtola'},
     { quote: 'onhan mulla takataskussa olutpullo', Author: 'Pasi Ahtola'},
