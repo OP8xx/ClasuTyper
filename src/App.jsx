@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { themes } from './themes/themes';
 import { quotes } from './quotes/quotes';
 import { ContactUs } from './components/contactform/contactform';
+import ShareScore from './components/sharescore/sharescore';
 
 // Importing images 
 import clasuLogo from './assets/clasulogo.svg'
@@ -515,7 +516,8 @@ function App() {
           >
             <div className='game-over-content'>
               <div className='game-over-header'>
-                <img src={luiska} alt="" width={250} style={{ marginTop: '2rem'}}/>
+                <h1>Jaa tuloksesi!</h1>
+                <ShareScore style={{color: themeFontColor, backgroundColor: themeBackground}} style2={{color: themeFontColor, backgroundColor: themeBackground}}/>
               </div>
 
               <div className='game-over-stats'>

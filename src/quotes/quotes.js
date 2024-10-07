@@ -98,5 +98,6 @@ export const quotes = [
     { quote: 'hyvä hyvä, jatkakaa propagandaa vaan', author: 'Hannu Sinisalo'},
     { quote: 'karavaani kulkee', author: 'Hannu Sinisalo'},
     { quote: 'kotibileissä tulee itku kun käsidesi loppuu', author: 'Pasi Ahtola'},
-    { quote: 'nyt on kyllä pitkän matematiikan opettaja', author: 'Sinisalo puhuessaan pituudestaan'}
+    { quote: 'nyt on kyllä pitkän matematiikan opettaja', author: 'Sinisalo puhuessaan pituudestaan'},
+    { quote: 'vihreät, kyseessä ei ole puolue vaan fanaattinen lahko', author: 'Mikko Turunen'}
 ]
