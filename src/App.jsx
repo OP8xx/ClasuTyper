@@ -426,6 +426,11 @@ function App() {
         <h1>Ilmoitukset</h1>
 
         <div className='notification' style={{ backgroundColor: themeBackground, border: `1px solid ${themeFontColor}`}}>
+          <p>Onnittelut valmistuneille, teitte kovaa duunii Clasus! &lt;3</p>
+          <p>- Pelintekijä</p>
+        </div>
+
+        <div className='notification' style={{ backgroundColor: themeBackground, border: `1px solid ${themeFontColor}`}}>
           <p>Kiitoksia kaikista lähetetyistä quoteista ja lämpimästä vastaanotosta &lt;3</p>
           <p>- Pelintekijä</p>
         </div>
