@@ -521,8 +521,8 @@ function App() {
           >
             <div className='game-over-content'>
               <div className='game-over-header'>
-                <h1>Jaa tuloksesi!</h1>
-                <ShareScore style={{color: themeFontColor, backgroundColor: themeBackground}} style2={{color: themeFontColor, backgroundColor: themeBackground}}/>
+                <h1 style={{ color: themeFontColor }}>Jeesjees, ihan hyvä!</h1>
+                <img src={luiska} alt="" width={250}/>
               </div>
 
               <div className='game-over-stats'>
