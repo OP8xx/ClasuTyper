@@ -377,7 +377,7 @@ function App() {
 
         <h1>Credits</h1>
         
-        <p>Made by: <br></br>Clasun Abi 2025</p>
+        <p>Made by: <br></br>Oula Simelius (Clasun abi 2025)</p>
         <hr style={{border: `1px solid ${themeFontColor}`}}/>
         <p>Pelin kuvitukset: <br></br>Eräs Clasun Alumni</p>
         <hr style={{border: `1px solid ${themeFontColor}`}}/>
